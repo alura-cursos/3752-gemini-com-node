@@ -21,15 +21,31 @@ async function enviarMensagem() {
     const mensagem = input.value;
     input.value = '';
 
-    const novaBolha = criaBolhaUsuario();
-    novaBolha.innerHTML = mensagem;
-    chat.appendChild(novaBolha);
+    try {
+        const response = await fetch('http://localhost:3000/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({'mensagem': mensagem })
+        });
 
-    let novaBolhaBot = criaBolhaBot();
-    chat.appendChild(novaBolhaBot);
-    vaiParaFinalDoChat();
-    novaBolhaBot.innerHTML = mensagem;
-    vaiParaFinalDoChat();
+        const novaBolha = criaBolhaUsuario();
+        novaBolha.innerHTML = mensagem;
+        chat.appendChild(novaBolha);
+    
+        let novaBolhaBot = criaBolhaBot();
+        chat.appendChild(novaBolhaBot);
+        vaiParaFinalDoChat();
+
+        const resposta = await response.json();
+        novaBolhaBot.innerHTML = resposta.response;
+        vaiParaFinalDoChat();
+
+    } catch (error) {
+        alert(error);
+    }
+ 
 }
 
 function criaBolhaUsuario() {

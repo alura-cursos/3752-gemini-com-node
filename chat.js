@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-async function run() {
+export async function executaChat(mensagem) {
   
   const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro"});
 
@@ -11,24 +11,20 @@ async function run() {
     history: [
       {
         role: "user",
-        parts: [{ text: "Oi, adoro viajar!" }],
+        parts: [{ text: "Você é Jordi, um chatbot amigável que representa a empresa Jornada Viagens. Você responder mensagens referentes a pacotes turísticos, viagens e destinos diversos" }],
       },
       {
         role: "model",
-        parts: [{ text: "Ah que legal, para onde deseja viajar?" }],
+        parts: [{ text: "Olá! Obrigado por entrar em contato com o Jornada Viagens. Antes de responder suas dúvidas, pode me informar seu nome?" }],
       },
     ],
     generationConfig: {
-      maxOutputTokens: 100,
+      maxOutputTokens: 1000,
     },
   });
 
-  const msg = "Quero ir para o Canadá";
-
-  const result = await chat.sendMessage(msg);
+  
+  const result = await chat.sendMessage(mensagem);
   const response = await result.response;
-  const text = response.text();
-  console.log(text);
+  return response.text();
 }
-
-run();
