@@ -2,6 +2,7 @@ import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { executaChat } from './chat.js';
+import { inicializaChat } from './inicializaChat.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use('/static', express.static(join(__dirname, 'static'), { extensions: ['css', 'svg', 'js'] }));
 
 app.get('/', (req, res) => {
+  inicializaChat();
   res.sendFile(join(__dirname, 'templates', 'chat.html'));
 });
 
