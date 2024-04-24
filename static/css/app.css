@@ -1,0 +1,231 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background: #000;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+}
+
+a:visited,
+a {
+    color: #DAD9D9;
+}
+
+.container {
+    padding: 0 2rem;
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        padding: 0 calc((100vw - 1200px) / 2);
+    }
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid #8F0101;
+}
+
+.cabecalho__acoes {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 1400px) {
+    .cabecalho__acoes {
+        gap: 2.8125rem;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 10rem - 5rem);
+
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.chat::-webkit-scrollbar {
+    display: none;
+}
+
+.chat__bolha {
+    max-width: calc(100% - 3.5rem);
+    width: fit-content;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-size: 1.375rem;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.chat__bolha--bot {
+    background-color: #D9D9D9;
+}
+
+.chat__bolha--bot::before {
+    content: "";
+    display: block;
+
+    height: 2.5rem;
+    width: 2.5rem;
+
+    position: absolute;
+    top: 0;
+    left: calc(-2.5rem - 1rem);
+
+    background-image: url(../img/icone-chatbot.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.chat__bolha--usuario {
+    border: 1px solid #D9D9D9;
+    align-self: flex-end;
+    color: #D9D9D9;
+}
+
+.chat__bolha--usuario::after {
+    content: "";
+    display: block;
+
+    height: 2.5rem;
+    width: 2.5rem;
+
+    position: absolute;
+    top: 0;
+    right: calc(-2.5rem - 1rem);
+
+    background-image: url(../img/icone-perfil.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.entrada {
+    height: 10rem;
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: stretch;
+    align-items: center;
+    border-top: 1px solid #8F0101;
+}
+
+.entrada__container {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0.5rem;
+    background-color: #D9D9D9;
+    border: 1px solid #8F0101;
+    border-radius: 4rem;
+
+}
+
+.entrada__input {
+    height: 4rem;
+    width: 100%;
+
+    background-color: transparent;
+    font-size: 1.375rem;
+    color: #000;
+
+    padding-left: 20px;
+}
+
+.entrada__input::placeholder {
+    color: #8C8C8C;
+}
+
+.entrada__enviar-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 4rem;
+    width: 4rem;
+
+    background-color: #8F0101;
+    border: 1px solid #0C305C;
+    border-radius: 50%;
+}
+
+.entrada__feedback {
+    position: absolute;
+    bottom: 23px;
+    right: calc(2rem + 5.5rem);
+}
+
+@media screen and (min-width: 1400px) {
+    .entrada__feedback {
+        right: calc((100vw - 1200px) / 2 + 5.5rem);
+    }
+}
+
+.icone {
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icone--enviar-audio {
+    background-image: url(../img/icone-audio.svg);
+}
+
+.icone--mais-opcoes {
+    background-image: url(../img/icone-mais.svg);
+}
+
+.icone--enviar-mensagem {
+    background-image: url(../img/icone-enviar.svg);
+}
+
+.loader {
+    width: 60px;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side, #8C8C8C 90%, #0000);
+    background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+    background-size: calc(100%/3) 50%;
+    animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+    20% {
+        background-position: 0% 0%, 50% 50%, 100% 50%
+    }
+
+    40% {
+        background-position: 0% 100%, 50% 0%, 100% 50%
+    }
+
+    60% {
+        background-position: 0% 50%, 50% 100%, 100% 0%
+    }
+
+    80% {
+        background-position: 0% 50%, 50% 50%, 100% 100%
+    }
+}
