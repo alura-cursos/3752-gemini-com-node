@@ -1,5 +1,4 @@
 import { GoogleGenerativeAI, FunctionDeclarationSchemaType } from '@google/generative-ai';
-import { type } from 'express/lib/response';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -64,4 +63,4 @@ function inicializaChat() {
   });
 }
 
-export { chat, inicializaChat}
+export { chat, funcoes, inicializaChat}
