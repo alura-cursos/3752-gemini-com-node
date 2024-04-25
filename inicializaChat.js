@@ -1,7 +1,20 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+const funcoes = {
+  taxaJurosParcelamento: ({ value }) => {
+    const meses = typeof value === "string" ? parseInt(value) : value;
+    if (meses <= 6) {
+      return 3;
+    } else if (meses <= 12) {
+      return 5;
+    } else if (meses <= 24) {
+      return 7;
+    }
+  }
+};
+
 
 const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro"});
 
