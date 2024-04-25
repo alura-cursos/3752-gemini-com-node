@@ -1,0 +1,28 @@
+Políticas do Jornada Viagens
+
+1.  Política de Devolução: 
+   - O Jornada Viagens oferece uma política de devolução, de 30 dias anteriores à data agendada, para casos de pacotes turísticos, passagens aéreas e hospedagens que não puderem ser realizadas.
+   - Os reembolsos serão processados com a mesma forma de pagamento realizada oririnalmente, seja cartão de débito, crédito ou pix.
+
+2.  Política de Privacidade: 
+   - Respeitamos sua privacidade e estamos comprometidos em proteger suas informações pessoais.
+   - As informações coletadas durante o processo de compra, como nome, endereço e informações de pagamento, são utilizadas apenas para fins de processamento de pedidos e comunicação com os clientes.
+   - Não compartilhamos suas informações com terceiros sem o seu consentimento.
+
+3.  Segurança: 
+   - Utilizamos tecnologia de criptografia de dados (SSL) para garantir que todas as informações de pagamento sejam transmitidas com segurança.
+   - Mantemos rigorosas medidas de segurança para proteger o banco de dados do cliente e evitar acessos não autorizados.
+
+4.  Sustentabilidade: 
+   - O Jornada Viagens se compromete com a sustentabilidade em todas as operações. Trabalhamos prioritariamente com empresas que tenham algum programa que minimize o impacto ambiental.
+
+5.  Atendimento ao Cliente: 
+   - Nossa equipe de atendimento ao cliente está disponível por chat ao vivo e e-mail (jornadaviagens@alura.com.br) para ajudar com perguntas, preocupações e assistência nas compras.
+   - Estamos comprometidos em fornecer um atendimento rápido e eficaz para garantir a satisfação dos clientes.
+
+6.  Responsabilidade Social: 
+   - O Jornada Viagens contribui com uma porcentagem das vendas para organizações de conservação ambiental e causas sociais.
+   - Apoiamos iniciativas locais e globais que promovem a proteção do meio ambiente e a justiça social.
+
+7.  Avaliações e Comentários: 
+   - Encorajamos os clientes a deixarem avaliações e comentários sobre os produtos para ajudar outros compradores a tomar decisões informadas.
